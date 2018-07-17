@@ -1,0 +1,25 @@
+<template format="4"
+    revision="1"
+    name="DataProvider and ViewModel template"
+    description="Creates a new ViewModel based on BaseViewModel, a DataProvider that provide data to ViewModel and the Data model">
+    
+    <category value="ProviderTemplate" />
+    <formfactor value="Mobile" />
+    
+    <parameter id="className"
+    name="DataProvider Name"
+    type="string"
+    constraints="class|unique|nonempty"
+    default="Name"
+    help="The name of the DataProvider feature"/>
+    
+    <parameter
+    id="generateVM"
+    name="Generate View Model File"
+    type="boolean"
+    default="true"
+    help="If true, a ViewModel file inherited from BaseViewModel.class will be generated" />
+    
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+</template>
