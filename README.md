@@ -6,4 +6,8 @@
 	要创建PostDetailActivity时，只需在弹出的对话框中填入PostDetail, <br/>
 	点击Finish后会创建PostDetailActivity,IPostDetailUI,PostDetailPresent三个文件<br/>
 
-- 注意！！！需要在项目的跟目录（com.gelonghui.glhapp)而不是activity目录上使用该模板！！！
+- 注意！！！需要在项目的跟目录（com.aucean.vmtest)而不是activity目录上使用该模板！！！
+
+# 如何使用
+
+- 

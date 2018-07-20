@@ -1,3 +1,3 @@
-package ${packageName}.models.binding
+package ${packageName}.mvvm.bindingmodel
 
 class ${className}BindingModel()

@@ -1,13 +1,15 @@
-package ${packageName}.dataprovider
-import io.reactivex.Observable
-import ${packageName}.models.bean.V2ResponseModel
+package ${packageName}.mvvm.dataprovider
 
+import io.reactivex.Observable
+import ${packageName}.mvvm.ResponseModel
+import ${packageName}.mvvm.BaseDataProvider
+import ${packageName}.mvvm.BaseNetworkProvider
 
 class ${className}DataProvider
-   :BaseDataProvider<${className}ApiParams, ${className}RawDataModel>(${className}NetWorkDataProvider()){
+    :BaseDataProvider<${className}ApiParams, ${className}RawDataModel>(${className}NetWorkDataProvider()){
     
     protected class ${className}NetWorkDataProvider : BaseNetworkProvider<${className}ApiParams, ${className}RawDataModel>(){
-         override fun getDataFromNetwork(params: ${className}ApiParams): Observable<V2ResponseModel<${className}RawDataModel>> {
+         override fun getDataFromNetwork(params: ${className}ApiParams): Observable<ResponseModel<${className}RawDataModel>> {
             TODO("实现从网络加载数据功能")
             /* e.g.
              *      return HttpHelper.getServer().getExampleData(params.stockType, params.stockCode)

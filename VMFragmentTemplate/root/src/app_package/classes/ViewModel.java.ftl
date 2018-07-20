@@ -1,14 +1,15 @@
-package ${packageName}.viewmodel;
+package ${packageName}.mvvm.viewmodel;
 
-import ${packageName}.dataprovider.IDataProvider;
-import ${packageName}.dataprovider.${className}DataProvider;
-import ${packageName}.dataprovider.${className}ApiParams;
-import ${packageName}.dataprovider.${className}RawDataModel;
-import ${packageName}.models.binding.${className}BindingModel;
-import ${packageName}.utils.GlhLiveData;
 import android.arch.lifecycle.MutableLiveData;
-import org.jetbrains.annotations.NotNull;
 import kotlin.Unit;
+
+import ${packageName}.mvvm.BaseViewModel;
+import ${packageName}.mvvm.GlhLiveData;
+import ${packageName}.mvvm.dataprovider.${className}DataProvider;
+import ${packageName}.mvvm.dataprovider.${className}ApiParams;
+import ${packageName}.mvvm.dataprovider.${className}RawDataModel;
+import ${packageName}.mvvm.bindingmodel.${className}BindingModel;
+
 
 public class ${className}ViewModel
     extends BaseViewModel
@@ -31,7 +32,7 @@ public class ${className}ViewModel
     public void getData(/*根据需要添加请求参数*/) {
         ${className}ApiParams apiParams = new ${className}ApiParams();
         // apiParams 赋值
-        getData(currentDataProvider, apiParams, bindingModel, ()->{ return Unit.INSTANCE;});
+        currentDataProvider.getData(apiParams, bindingModel, ()->{ return Unit.INSTANCE;});
     }
 
 }

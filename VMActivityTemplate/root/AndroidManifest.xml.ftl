@@ -4,7 +4,7 @@
 
     <application>
         <activity android:name=".activity.${className}Activity"
-                  android:theme="@style/CustomCompatTheme"/>
+                  android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
     </application>
 </manifest>

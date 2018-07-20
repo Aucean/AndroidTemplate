@@ -1,11 +1,12 @@
 package ${packageName}.viewmodel
 
-import ${packageName}.dataprovider.IDataProvider
-import ${packageName}.dataprovider.${className}DataProvider
-import ${packageName}.dataprovider.${className}ApiParams
-import ${packageName}.dataprovider.${className}RawDataModel
-import ${packageName}.utils.GlhLiveData
-import ${packageName}.models.binding.${className}BindingModel
+import ${packageName}.mvvm.BaseViewModel
+import ${packageName}.mvvm.GlhLiveData
+import ${packageName}.mvvm.dataprovider.${className}DataProvider
+import ${packageName}.mvvm.dataprovider.${className}ApiParams
+import ${packageName}.mvvm.dataprovider.${className}RawDataModel
+import ${packageName}.mvvm.bindingmodel.${className}BindingModel
+
 class ${className}ViewModel
     : BaseViewModel()
 {
@@ -18,7 +19,7 @@ class ${className}ViewModel
     }
 
     fun getData(/*根据需要添加请求参数*/) {
-        getData(currentDataProvider, ${className}ApiParams().apply{
+        currentDataProvider.getData(${className}ApiParams().apply{
             // 根据实际需要给api 参数赋值
         }, bindingModel, {})
     }

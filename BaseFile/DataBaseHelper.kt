@@ -1,11 +1,9 @@
-package com.gelonghui.xchain.dataprovider
+package com.aucean.dataprovider
 
 import android.os.Handler
 import android.support.v4.app.FragmentActivity
-import com.gelonghui.xchain.models.bean.V2ResponseModel
-import com.gelonghui.xchain.utils.GLhOptional
-import com.gelonghui.xchain.utils.GlhLiveData
-import com.gelonghui.xchain.utils.Optional
+import com.aucean.models.bean.V2ResponseModel
+import com.aucean.utils.GlhLiveData
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -15,21 +13,42 @@ import io.reactivex.schedulers.Schedulers
 import java.lang.RuntimeException
 
 /**
- * 定义业务层IO异常，也就是网络请求返回的V2ResponseModel中的
+ * 定义业务层IO异常，也就是网络请求返回的ResponseModel中的
  * statusCode 不为200
  */
 class BusinessException(var statusCode: Int, message: String = "") :RuntimeException(message)
+
+interface Optional<T> {
+
+    fun ifPresent(apply: (T) -> Unit): T?
+
+    fun takeData(hasData: (T) -> Unit, noData: ()->Unit = {})
+}
+
+class OptionalImpl<T>(private var value: T? = null): Optional<T> {
+
+    override fun ifPresent(apply: (T) -> Unit): T? {
+        return value?.apply {
+            apply(this)
+        }
+    }
+
+    override fun takeData(hasData: (T) -> Unit, noData: ()->Unit) {
+        value?.run {
+            hasData(this)
+        } ?: noData()
+    }
+}
+
 
 fun <T> Observable<T>.async(): Observable<T> {
     return this.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
 }
 
 fun <T>  Observable<V2ResponseModel<T>>.glhmap(): Observable<Optional<T>> {
+    // 把业务层的异常路由到onError
     return this.map{ vrm: V2ResponseModel<T> ->
-        vrm.run {
-            if (statusCode != 200) throw BusinessException(statusCode, vrm.message ?: "")
-        }
-
+        if (vrm.statusCode != 200) throw BusinessException(statusCode, vrm.message ?: "")
         vrm as Optional<T>
     }.subscribeOn(Schedulers.io())
 }
