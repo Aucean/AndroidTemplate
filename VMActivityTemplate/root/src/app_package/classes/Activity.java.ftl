@@ -1,6 +1,6 @@
 package ${packageName}.activity;
 
-import ${packageName}.viewmodel.${className}ViewModel;
+import ${packageName}.mvvm.viewmodel.${className}ViewModel;
 import android.databinding.DataBindingUtil;
 import android.arch.lifecycle.ViewModelProviders;
 import ${packageName}.databinding.Activity${className}Binding;

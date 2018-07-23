@@ -3,7 +3,7 @@
     <data>
         <variable
             name="bindingModel"
-            type="android.arch.lifecycle.LiveData&lt;${packageName}.models.binding.${className}BindingModel&gt;"/>
+            type="android.arch.lifecycle.LiveData&lt;${packageName}.mvvm.bindingmodel.${className}BindingModel&gt;"/>
     </data>
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

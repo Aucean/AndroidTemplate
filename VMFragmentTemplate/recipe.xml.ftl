@@ -11,24 +11,24 @@
     <open file="${escapeXmlAttribute(srcOut)}/fragment/${className}Fragment.kt" />
     
     <instantiate from="src/app_package/classes/ViewModel.kt.ftl"
-    to="${escapeXmlAttribute(srcOut)}/viewmodel/${className}ViewModel.kt" />
-    <open file="${escapeXmlAttribute(srcOut)}/viewmodel/${className}ViewModel.kt"/>
+    to="${escapeXmlAttribute(srcOut)}/mvvm/viewmodel/${className}ViewModel.kt" />
+    <open file="${escapeXmlAttribute(srcOut)}/mvvm/viewmodel/${className}ViewModel.kt"/>
 <#else>
     <instantiate from="src/app_package/classes/Fragment.java.ftl"
     to="${escapeXmlAttribute(srcOut)}/fragment/${className}Fragment.java" />     
     <open file="${escapeXmlAttribute(srcOut)}/fragment/${className}Fragment.java" />
     
     <instantiate from="src/app_package/classes/ViewModel.java.ftl"
-    to="${escapeXmlAttribute(srcOut)}/viewmodel/${className}ViewModel.java" />
-    <open file="${escapeXmlAttribute(srcOut)}/viewmodel//${className}ViewModel.java"/>
+    to="${escapeXmlAttribute(srcOut)}/mvvm/viewmodel/${className}ViewModel.java" />
+    <open file="${escapeXmlAttribute(srcOut)}/mvvm/viewmodel//${className}ViewModel.java"/>
 </#if>
 
     <instantiate from="src/app_package/classes/Provider.kt.ftl"
-    to="${escapeXmlAttribute(srcOut)}/dataprovider/${className}DataProvider.kt" />
-    <open file="${escapeXmlAttribute(srcOut)}/dataprovider/${className}DataProvider.kt"/>
+    to="${escapeXmlAttribute(srcOut)}/mvvm/dataprovider/${className}DataProvider.kt" />
+    <open file="${escapeXmlAttribute(srcOut)}/mvvm/dataprovider/${className}DataProvider.kt"/>
     
     <instantiate from="src/app_package/classes/Model.kt.ftl"
-    to="${escapeXmlAttribute(srcOut)}/models/binding/${className}BindingModel.kt" />
-    <open file="${escapeXmlAttribute(srcOut)}/models/binding/${className}BindingModel.kt"/>
+    to="${escapeXmlAttribute(srcOut)}/mvvm/bindingmodel/${className}BindingModel.kt" />
+    <open file="${escapeXmlAttribute(srcOut)}/mvvm/bindingmodel/${className}BindingModel.kt"/>
 
 </recipe>

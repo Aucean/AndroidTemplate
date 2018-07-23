@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ${packageName}.viewmodel.${className}ViewModel
+import ${packageName}.mvvm.viewmodel.${className}ViewModel
 import android.arch.lifecycle.ViewModelProviders
 
 

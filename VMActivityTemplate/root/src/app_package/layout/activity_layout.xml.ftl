@@ -6,7 +6,7 @@
     <data>
         <variable
             name="bindingModel"
-            type="android.arch.lifecycle.LiveData&lt;${packageName}.models.binding.${className}BindingModel&gt;"/>
+            type="android.arch.lifecycle.LiveData&lt;${packageName}.mvvm.bindingmodel.${className}BindingModel&gt;"/>
     </data>
     <LinearLayout
         android:id="@+id/coordinator_layout"
