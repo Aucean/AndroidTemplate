@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import ${packageName}.mvvm.viewmodel.${className}ViewModel
 import android.arch.lifecycle.ViewModelProviders
-
+import android.support.v4.app.Fragment
 
 /**
  * 所有与UI没关的代码都不应该写在这里，而是在ViewModel，或者抽象到一个Helper里边实现
  */
-class ${className}Fragment : BaseFragment(){
+class ${className}Fragment : Fragment(){
 
     internal val mViewModel: ${className}ViewModel by lazy {
         ViewModelProviders.of(this).get(${className}ViewModel::class.java)
@@ -38,7 +38,7 @@ class ${className}Fragment : BaseFragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mBinding = Fragment${className}Binding.inflate(inflater, container, false)
         mBinding.setLifecycleOwner(this)
-        mBinding.bindingModel = mViewModel.liveBindingData
+        mBinding.bindingModel = mViewModel.bindingModel
 
         return mBinding.root
     }

@@ -18,7 +18,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/tool_bar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/V3Item_78">
+            android:layout_height="39dp">
         </android.support.v7.widget.Toolbar>
         <RelativeLayout
             android:id="@+id/layout_content"

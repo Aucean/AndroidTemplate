@@ -6,11 +6,13 @@ import android.arch.lifecycle.ViewModelProviders
 import ${packageName}.databinding.Activity${className}Binding
 import android.os.Bundle
 import ${packageName}.R
+import android.support.v7.app.AppCompatActivity
+
 
 /**
  * 所有与UI没关的代码都不应该写在这里，而是在ViewModel，或者抽象到一个Helper里边实现
  */
-class ${className}Activity : BaseAppCompatActivity() {
+class ${className}Activity : AppCompatActivity() {
 
     internal val mViewModel: ${className}ViewModel by lazy {
         ViewModelProviders.of(this).get(${className}ViewModel::class.java)
@@ -22,7 +24,7 @@ class ${className}Activity : BaseAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView<Activity${className}Binding>(this, R.layout.${activityLayoutName})
-        initActionBar("")
+        
 
         mBinding.setLifecycleOwner(this)
         mBinding.bindingModel = mViewModel.bindingModel

@@ -9,11 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import ${packageName}.mvvm.viewmodel.${className}ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
+import android.support.v4.app.Fragment;
 
 /**
  * 所有与UI没关的代码都不应该写在这里，而是在ViewModel，或者抽象到一个Helper里边实现
  */
-public class ${className}Fragment extends BaseFragment{
+public class ${className}Fragment extends Fragment{
 
     ${className}ViewModel mViewModel;
     Fragment${className}Binding mBinding;

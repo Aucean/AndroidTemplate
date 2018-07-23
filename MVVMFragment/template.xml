@@ -1,9 +1,9 @@
 <template format="4"
     revision="1"
-    name="ViewModel Based Fragment Template"
+    name="Fragment Template that based on ViewModel"
     description="Create a ViewModel Based fragment template">
     
-    <category value="VMFragment" />
+    <category value="MVVMFragment" />
     <formfactor value="Mobile" />
     
     <parameter id="className"
@@ -11,7 +11,7 @@
     type="string"
     constraints="class|unique|nonempty"
     default="Name"
-    help="The name of the functionality that requires ViewModel based fragment"/>
+    help="The fragment name"/>
     
     
     <parameter
@@ -21,7 +21,7 @@
     constraints="layout|unique|nonempty"
     suggest="fragment_${classToResource(className)}"
     default="fragment_custom"
-    help="The name of the layout to create for the fragment" />
+    help="The fragment layout name" />
     
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />

@@ -1,9 +1,9 @@
 <template format="4"
     revision="1"
-    name="ViewModel based activity template"
-    description="Creates a new MVP classes - Presenter, View and Contract between the two">
+    name="Activity template that based on ViewModel"
+    description="Creates activity, viewmodel and dataprovider file with the template">
     
-    <category value="VMActivity" />
+    <category value="MVVMActivity" />
     <formfactor value="Mobile" />
     
     <parameter id="className"
@@ -11,7 +11,7 @@
     type="string"
     constraints="class|unique|nonempty"
     default="Name"
-    help="The name of the functionality that requires ViveModel based acitity"/>
+    help="The acitity name"/>
     
     <parameter
     id="activityLayoutName"
@@ -20,7 +20,7 @@
     constraints="layout|unique|nonempty"
     suggest="${activityToLayout(className)}"
     default="activity_custom"
-    help="The name of the layout to create for the fragment" />
+    help="The activity layout name" />
     
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />

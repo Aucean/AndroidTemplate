@@ -104,9 +104,9 @@ abstract class BaseNetworkProvider<P, D>: ILoadMoreAbleDataProvider<P, D> {
         liveError?.observe(activity, object : android.arch.lifecycle.Observer<Throwable> {
             override fun onChanged(t: Throwable?) {
                 t?.run {
-                    var msg = activity.getString(R.string.msg_please_check_network)
+                    var msg = "请检查网络"
                     if (t is BusinessException) {
-                        msg = if (t.statusCode <= 0) activity.getString(R.string.msg_server_error) else message
+                        msg = if (t.statusCode <= 0) "服务器出错" else (t.message ?: "")
                     }
                     Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show()
                 }

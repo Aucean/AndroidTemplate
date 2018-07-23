@@ -1,4 +1,4 @@
-package ${packageName}.viewmodel
+package ${packageName}.mvvm.viewmodel
 
 import ${packageName}.mvvm.BaseViewModel
 import ${packageName}.mvvm.GlhLiveData
