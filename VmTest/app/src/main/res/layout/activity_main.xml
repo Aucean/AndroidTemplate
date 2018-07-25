@@ -5,28 +5,27 @@
 
     <data>
 
-        <variable
-            name="bindingModel"
-            type="android.arch.lifecycle.LiveData&lt;com.aucean.vmtest.mvvm.bindingmodel.MainBindingModel&gt;" />
     </data>
 
     <LinearLayout
         android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         android:orientation="vertical"
+        android:background="#f6f6f6"
         tools:context="com.aucean.vmtest.activity.MainActivity">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/tool_bar"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
             android:layout_width="match_parent"
-            android:layout_height="39dp"></android.support.v7.widget.Toolbar>
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:id="@+id/article_list">
 
-        <RelativeLayout
-            android:id="@+id/layout_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></RelativeLayout>
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 </layout>

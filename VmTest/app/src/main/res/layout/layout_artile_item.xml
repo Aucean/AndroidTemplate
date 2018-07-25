@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="dataModel"
+            type="com.aucean.vmtest.mvvm.bindingmodel.VmTemplateExampleBindingModelItem"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="12dp">
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#e8e8e8"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="12dp"
+            android:id="@+id/gap"/>
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="15dp"
+            android:transitionName="covertImg"
+            bind:loadUrl="@{dataModel.imgUrl}"
+            android:id="@+id/picture"/>
+        <TextView
+            android:layout_toRightOf="@id/picture"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:text="@{dataModel.title}"
+            android:id="@+id/title"/>
+        <TextView
+            android:layout_toRightOf="@id/picture"
+            android:layout_above="@id/gap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:minLines="2"
+            android:textColor="#666666"
+            android:textSize="13sp"
+            android:text="@{dataModel.summary}"/>
+    </RelativeLayout>
+</layout>
