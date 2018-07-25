@@ -15,6 +15,7 @@ import com.aucean.vmtest.adapter.CommonRecyclerViewAdapter
 import com.aucean.vmtest.mvvm.bindingmodel.VmTemplateExampleBindingModel
 import com.aucean.vmtest.mvvm.bindingmodel.VmTemplateExampleBindingModelItem
 import com.aucean.vmtest.mvvm.viewmodel.VmTemplateExampleViewModel
+import android.util.Pair
 
 
 /**
@@ -39,6 +40,11 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra(ArticleDetailActivity.POST_ID, articleList[position].postId)
                 intent.putExtra(ArticleDetailActivity.IMAGE_URL, articleList[position].imgUrl)
                 val shareElement = v.findViewById<View>(R.id.picture)
+                val shareTitle = v.findViewById<View>(R.id.title)
+//                val options = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity,
+//                        Pair.create(shareElement, "covertImg"),
+//                        Pair.create(shareTitle, "title"))
+
                 val options = ActivityOptions
                         .makeSceneTransitionAnimation(this@MainActivity, shareElement, "covertImg")
                 startActivity(intent, options.toBundle())

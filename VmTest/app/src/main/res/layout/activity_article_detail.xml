@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="@{bindingModel.title}"
+            android:transitionName="title"
             android:textSize="17sp"
             android:textColor="#111111"
             android:layout_marginTop="20dp"

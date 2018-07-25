@@ -1,10 +1,8 @@
 package com.aucean.vmtest.mvvm.dataprovider
 
+import com.aucean.vmtest.database.AppDatabase
+import com.aucean.vmtest.mvvm.*
 import io.reactivex.Observable
-import com.aucean.vmtest.mvvm.ResponseModel
-import com.aucean.vmtest.mvvm.BaseDataProvider
-import com.aucean.vmtest.mvvm.BaseNetworkProvider
-import com.aucean.vmtest.mvvm.HttpHelper
 import com.aucean.vmtest.mvvm.bindingmodel.VmTemplateExampleBindingModel
 import com.aucean.vmtest.mvvm.bindingmodel.VmTemplateExampleBindingModelItem
 

@@ -97,7 +97,6 @@ open class BaseDataProvider<P, R>(val provider: IDataProvider<P, R>): IDataProvi
 open class BaseDataProviderWithCache<P, R>(provider: IDataProvider<P, R>)
     :BaseDataProvider<P, R>(provider){
 
-    var canTake: Boolean = true
     val handler = Handler()
     // 获取数据入口，先把本地缓存数据发送出去（如果有的话），再从网络请求数据、发送数据
     override fun getData(params: P): Observable<Optional<R>> {
@@ -108,17 +107,10 @@ open class BaseDataProviderWithCache<P, R>(provider: IDataProvider<P, R>)
             }
             emitter.onComplete()
         }, provider.getData(params).doOnNext { optionalData ->
-            if (canTake) {
-                optionalData.ifPresent { data ->
-                    Schedulers.io().createWorker().schedule {
-                        saveData(params, data)
-                    }
+            optionalData.ifPresent { data ->
+                Schedulers.io().createWorker().schedule {
+                    saveData(params, data)
                 }
-                // 避免过频的缓存数据
-                handler.postDelayed({
-                    canTake = true
-                }, 2 * 60* 1000)
-
             }
         }).async()
     }

@@ -37,6 +37,8 @@
             android:maxLines="2"
             android:textColor="#333333"
             android:textSize="16sp"
+            android:transitionName="title"
+            android:textStyle="bold"
             android:text="@{dataModel.title}"
             android:id="@+id/title"/>
         <TextView

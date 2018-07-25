@@ -58,4 +58,11 @@ dependencies {
 
     kapt "android.arch.lifecycle:compiler:$lifecycle_version"
     implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
+
+    implementation "android.arch.persistence.room:runtime:$lifecycle_version"
+    kapt "android.arch.persistence.room:compiler:$lifecycle_version"
+
+    // optional - RxJava support for Room
+    implementation "android.arch.persistence.room:rxjava2:$lifecycle_version"
+
 }
