@@ -20,6 +20,9 @@ class ArticleDetailViewModel
             return ArticleDetailBindingModel().apply {
                 imgUrl = data.coverImageUrl
                 title = data.title
+                /**
+                 * 模拟根据业务需求对网络返回数据进行处理
+                 */
                 summary = Html.fromHtml(data.summary).toString()
                 content = Html.fromHtml(data.content).toString()
             }
